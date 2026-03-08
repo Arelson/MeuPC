@@ -40,7 +40,7 @@ class ProdutoSeeder extends Seeder
             Produto::create($produto);
         }
         
-        Produto::factory()->count(20)->create();
+        Produto::factory()->count(200)->create();
         
     }
 }

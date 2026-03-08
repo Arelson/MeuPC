@@ -87,6 +87,6 @@ class ChatBotSeeder extends Seeder
             ],
         ]);
 
-        ChatBot::factory()->count(20)->create();
+        ChatBot::factory()->count(100)->create();
     }
 }

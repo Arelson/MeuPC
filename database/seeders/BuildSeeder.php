@@ -15,7 +15,7 @@ class BuildSeeder extends Seeder
     {
         //
         Build::truncate(); // Limpa a tabela antes de inserir novos dados
-        Build::factory()->count(30)->create();
+        Build::factory()->count(80)->create();
         
     }
 }
