@@ -18,8 +18,8 @@ class BuildCompFactory extends Factory
     {
         return [
             //
-            'build_id' => \App\Models\Build::factory(),
-            'componente_id' => \App\Models\Produto::factory(),
+            'build_id' => \App\Models\Build::inRandomOrder()->first()->id ?? \App\Models\Build::factory(), // Seleciona uma build aleatória ou cria uma nova se não houver builds
+            'componente_id' => \App\Models\Produto::inRandomOrder()->first()->id ?? \App\Models\Produto::factory(), // Seleciona um produto aleatório ou cria um novo se não houver produtos
             'quantidade' => $this->faker->numberBetween(1, 5),
         ];
     }
