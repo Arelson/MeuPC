@@ -25,7 +25,10 @@ class BuildCompRepositoryEloquent extends BaseRepository implements BuildCompRep
         return BuildComp::class;
     }
 
-    
+    public function validator()
+    {
+        return BuildCompValidator::class;
+    }
 
     /**
      * Boot up the repository, pushing criteria
