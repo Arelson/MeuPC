@@ -25,7 +25,7 @@ class Produto extends Model
     // Define a relação entre Produto e BuildComp
     public function buildComps()
     {
-        return $this->hasMany(BuildComp::class);
+        return $this->hasMany(BuildComp::class, 'componente_id');//ter cuidado com o nome da chave estrangeira, deve ser o mesmo que o nome do campo na tabela build_comps
     }
 
     public function builds()
