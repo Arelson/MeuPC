@@ -75,7 +75,7 @@ class BuildCompController extends Controller
 
     public function update(Request $request, $id, $componente_id)
     {
-        return $this->buildCompService->update($request->all(), $componente_id,);
+        return $this->buildCompService->update($request->all(), $componente_id);
     }
 
     public function destroy($id, $componente_id)
