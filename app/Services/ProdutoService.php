@@ -21,7 +21,7 @@ class ProdutoService
     public function create(array $data)
     {
         try {
-            $this->validator->validate($data);
+            $this->validator->with($data)->passesOrFail('create');
             return $this->repository->create($data);
         } catch (Exception $e) {
             throw new Exception('Erro ao criar produto: ' . $e->getMessage());
@@ -62,14 +62,14 @@ class ProdutoService
     public function update(int $id, array $data)
     {
         try {
-            $this->validator->validate($data);
+            $this->validator->with($data)->passesOrFail('update');
             $produto = $this->repository->find($id);
             
             if (!$produto) {
                 throw new Exception('Produto não encontrado');
             }
             
-            return $this->repository->update($id, $data);
+            return $this->repository->update($data, $id);
         } catch (Exception $e) {
             throw new Exception('Erro ao atualizar produto: ' . $e->getMessage());
         }

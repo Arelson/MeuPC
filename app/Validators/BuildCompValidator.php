@@ -19,14 +19,14 @@ class BuildCompValidator extends LaravelValidator
      */
     protected $rules = [
         ValidatorInterface::RULE_CREATE => [
-            'build_id|required',
-            'componente_id|required',
-            'quantidade|required|integer|min:1',
+            'build_id' => 'required',
+            'componente_id' => 'required',
+            'quantidade' => 'required|integer|min:1',
         ],
         ValidatorInterface::RULE_UPDATE => [
-            'build_id|required',
-            'componente_id|required',
-            'quantidade|required|integer|min:1',
+            //'build_id' => 'required',// Pois como não estar no fillable, não é obrigatório para update, mas pode ser necessário para identificar o registro a ser atualizado
+            //'componente_id' => 'required', // Pois como não estar no fillable, não é obrigatório para update, mas pode ser necessário para identificar o registro a ser atualizado
+            'quantidade' => 'required|integer|min:1',
         ],
 
     ];

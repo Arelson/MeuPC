@@ -21,8 +21,8 @@ class BuildCompService
     public function create(array $data)
     {
         try {
-            $validated = $this->validator->validate($data);
-            return $this->repository->create($validated);
+            $validated = $this->validator->with($data)->passesOrFail('create'); //Usando os metodos de validação do Prettus para validar os dados antes de criar a build
+            return $this->repository->create($data);
         } catch (Exception $e) {
             throw new Exception('Erro ao criar build: ' . $e->getMessage());
         }
@@ -52,12 +52,12 @@ class BuildCompService
         }
     }
 
-    public function update(int $id, array $data)
+    public function update(array $data, int $id)
     {
         try {
             $build = $this->repository->findOrFail($id);
-            $validated = $this->validator->validate($data);
-            return $this->repository->update($id, $validated);
+            $validated = $this->validator->with($data)->passesOrFail('update'); //Usando os metodos de validação do Prettus para validar os dados antes de atualizar a build
+            return $this->repository->update($data, $id);
         } catch (Exception $e) {
             throw new Exception('Erro ao atualizar componente: ' . $e->getMessage());
         }

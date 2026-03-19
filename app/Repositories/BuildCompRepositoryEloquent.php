@@ -5,7 +5,7 @@ namespace App\Repositories;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use App\Repositories\BuildCompRepository;
-use App\Entities\BuildComp;
+use App\Models\BuildComp;
 use App\Validators\BuildCompValidator;
 
 /**

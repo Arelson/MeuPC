@@ -19,14 +19,14 @@ class BuildValidator extends LaravelValidator
      */
     protected $rules = [
         ValidatorInterface::RULE_CREATE => [
-            'nome|required',
-            'Orcamento|required',
-            'descricao|required',
+            'nome' => 'required',
+            'Orcamento' => 'required',
+            'descricao' => 'required',
         ],
         ValidatorInterface::RULE_UPDATE => [
-            'nome|required',
-            'Orcamento|required',
-            'descricao|required',
+            'nome' => 'required',
+            'Orcamento' => 'required',
+            'descricao' => 'required',
         ],
 
     ];
